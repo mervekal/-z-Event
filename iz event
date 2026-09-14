@@ -1,740 +1,440 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>İzEvent | Organizasyon & Etkinlik</title>
-  <meta name="description" content="İzEvent Organizasyon - Düğün, nişan, özel davet, kurumsal etkinlik ve dekorasyon hizmetleri.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Montserrat", sans-serif;
-      background: #f8f5ee;
-      color: #34372f;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(250, 248, 242, 0.97);
-      border-bottom: 1px solid rgba(70, 80, 65, 0.08);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      max-width: 1250px;
-      margin: auto;
-      padding: 16px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      min-width: 190px;
-    }
-
-    .brand-main {
-      display: flex;
-      align-items: flex-end;
-      line-height: 0.85;
-      color: #4e5547;
-    }
-
-    .brand-iz {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 54px;
-      font-weight: 600;
-      letter-spacing: -7px;
-      position: relative;
-      padding-right: 7px;
-    }
-
-    .brand-iz::before {
-      content: "❧";
-      position: absolute;
-      left: -23px;
-      top: 18px;
-      font-size: 22px;
-      transform: rotate(-25deg);
-      opacity: .8;
-    }
-
-    .brand-event {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 38px;
-      font-weight: 400;
-    }
-
-    .brand-sub {
-      margin-top: 8px;
-      padding-left: 6px;
-      font-size: 8px;
-      letter-spacing: 6px;
-      color: #6f7368;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 13px;
-      color: #55594f;
-    }
-
-    nav a:hover {
-      color: #7d8873;
-    }
-
-    .offer-btn {
-      background: #687261;
-      color: white;
-      border-radius: 28px;
-      padding: 12px 24px;
-      font-size: 12px;
-      letter-spacing: .8px;
-      white-space: nowrap;
-    }
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(249,246,239,.99) 0%,
-          rgba(249,246,239,.94) 38%,
-          rgba(249,246,239,.45) 57%,
-          rgba(249,246,239,.08) 80%
-        ),
-        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=90");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-inner {
-      width: 100%;
-      max-width: 1250px;
-      margin: auto;
-      padding: 80px 55px;
-    }
-
-    .line {
-      width: 42px;
-      height: 1px;
-      background: #858978;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      letter-spacing: 5px;
-      color: #74796c;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(64px, 7vw, 98px);
-      line-height: .9;
-      font-weight: 500;
-      color: #465044;
-      max-width: 590px;
-      margin-bottom: 28px;
-    }
-
-    .hero-copy {
-      max-width: 540px;
-      font-size: 15px;
-      line-height: 1.9;
-      color: #4f534c;
-      margin-bottom: 34px;
-    }
-
-    .main-btn {
-      display: inline-block;
-      background: #687362;
-      color: white;
-      padding: 16px 30px;
-      font-size: 11px;
-      letter-spacing: 4px;
-      transition: .3s;
-    }
-
-    .main-btn:hover {
-      background: #535d4f;
-    }
-
-    section {
-      padding: 90px 30px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-title::before {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: #8d927d;
-      margin: 0 auto 17px;
-    }
-
-    .section-title h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 54px;
-      font-weight: 500;
-      color: #465044;
-    }
-
-    .section-title p {
-      font-size: 10px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: #8a8d80;
-      margin-top: 8px;
-    }
-
-    .services {
-      background: #fbf9f4;
-    }
-
-    .services-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 45px;
-    }
-
-    .service {
-      text-align: center;
-    }
-
-    .service-icon {
-      width: 84px;
-      height: 84px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: #efebe2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 31px;
-      color: #5d6657;
-    }
-
-    .service h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      color: #40463d;
-    }
-
-    .service p {
-      font-size: 13px;
-      color: #767970;
-      line-height: 1.7;
-    }
-
-    .about {
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 570px;
-      background: #f8f5ee;
-    }
-
-    .about-image {
-      min-height: 570px;
-      background:
-        url("https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1400&q=90")
-        center/cover no-repeat;
-    }
-
-    .about-text {
-      padding: 85px 75px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-text::after {
-      content: "❧";
-      position: absolute;
-      right: -35px;
-      bottom: -55px;
-      font-size: 210px;
-      color: rgba(104, 116, 95, 0.11);
-      transform: rotate(-18deg);
-    }
-
-    .about-text h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 56px;
-      font-weight: 500;
-      line-height: 1;
-      color: #465044;
-      margin-bottom: 23px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-text p {
-      max-width: 520px;
-      font-size: 14px;
-      line-height: 1.9;
-      color: #5e6259;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .quote {
-      background: #dde0d5;
-      padding: 52px 25px;
-      text-align: center;
-    }
-
-    .quote p {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
-      font-style: italic;
-      color: #53594f;
-    }
-
-    .contact {
-      background: #faf7f0;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 54px;
-      font-weight: 500;
-      color: #465044;
-      margin-bottom: 12px;
-    }
-
-    .contact-intro {
-      font-size: 14px;
-      color: #73776d;
-      margin-bottom: 42px;
-    }
-
-    .contact-grid {
-      max-width: 850px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .contact-item {
-      padding: 26px 15px;
-      border-top: 1px solid #b5b9aa;
-      border-bottom: 1px solid #b5b9aa;
-    }
-
-    .contact-icon {
-      display: block;
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
-
-    .contact-item a {
-      font-size: 12px;
-      color: #53584f;
-      word-break: break-word;
-    }
-
-    footer {
-      background: #ece8df;
-      padding: 42px 28px 18px;
-    }
-
-    .footer-inner {
-      max-width: 1150px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .footer-note {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      font-style: italic;
-      color: #62685d;
-      text-align: right;
-    }
-
-    .copyright {
-      margin-top: 30px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(80,80,70,.12);
-      text-align: center;
-      font-size: 10px;
-      color: #8a8c84;
-    }
-
-    @media (max-width: 850px) {
-
-      .nav {
-        padding: 14px 22px;
-      }
-
-      nav,
-      .offer-btn {
-        display: none;
-      }
-
-      .brand-iz {
-        font-size: 45px;
-      }
-
-      .brand-event {
-        font-size: 31px;
-      }
-
-      .brand-sub {
-        font-size: 7px;
-        letter-spacing: 4px;
-      }
-
-      .hero {
-        min-height: 650px;
-        background:
-          linear-gradient(
-            90deg,
-            rgba(249,246,239,.98) 0%,
-            rgba(249,246,239,.90) 52%,
-            rgba(249,246,239,.25) 100%
-          ),
-          url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=88");
-        background-size: cover;
-        background-position: 60% center;
-      }
-
-      .hero-inner {
-        padding: 70px 28px;
-      }
-
-      h1 {
-        font-size: 62px;
-        max-width: 390px;
-      }
-
-      .hero-copy {
-        max-width: 365px;
-        font-size: 14px;
-      }
-
-      section {
-        padding: 70px 24px;
-      }
-
-      .section-title h2 {
-        font-size: 45px;
-      }
-
-      .section-title p {
-        letter-spacing: 3px;
-        line-height: 1.8;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 44px 18px;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        min-height: 430px;
-      }
-
-      .about-text {
-        padding: 65px 28px;
-      }
-
-      .about-text h2 {
-        font-size: 48px;
-      }
-
-      .quote p {
-        font-size: 31px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-note {
-        text-align: center;
-        font-size: 24px;
-      }
-    }
-
-    @media (max-width: 500px) {
-
-      .hero {
-        min-height: 610px;
-      }
-
-      h1 {
-        font-size: 57px;
-      }
-
-      .service-icon {
-        width: 72px;
-        height: 72px;
-        font-size: 27px;
-      }
-
-      .service h3 {
-        font-size: 22px;
-      }
-
-      .service p {
-        font-size: 12px;
-      }
-
-      .contact h2 {
-        font-size: 44px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="nav">
-
-    <a href="#" class="brand">
-      <div class="brand-main">
-        <span class="brand-iz">İZ</span>
-        <span class="brand-event">Event</span>
-      </div>
-      <div class="brand-sub">ORGANİZASYON</div>
-    </a>
-
-    <nav>
-      <ul>
-        <li><a href="#">Anasayfa</a></li>
-        <li><a href="#hakkimizda">Hakkımızda</a></li>
-        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
-        <li><a href="#iletisim">İletişim</a></li>
-      </ul>
-    </nav>
-
-    <a class="offer-btn" href="mailto:Merve@izevent.tr">
-      Teklif Al →
-    </a>
-
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-inner">
-
-    <div class="line"></div>
-
-    <div class="eyebrow">
-      Özel Anlara<br>
-      Profesyonel Dokunuş
-    </div>
-
-    <h1>
-      Her Anınıza<br>
-      İz Bırakır
-    </h1>
-
-    <p class="hero-copy">
-      Hayallerinizi zarafetle gerçeğe dönüştürüyoruz.
-      Düğün, nişan, kurumsal etkinlik ve özel davetlerinizde
-      profesyonel ekibimizle yanınızdayız.
-    </p>
-
-    <a href="#hizmetler" class="main-btn">
-      HİZMETLERİMİZ →
-    </a>
-
-  </div>
-</section>
-
-<section class="services" id="hizmetler">
-
-  <div class="section-title">
-    <h2>Hizmetlerimiz</h2>
-    <p>Her detayda size özel çözümler</p>
-  </div>
-
-  <div class="services-grid">
-
-    <div class="service">
-      <div class="service-icon">♡</div>
-      <h3>Düğün & Nişan</h3>
-      <p>En özel günlerinizi unutulmaz kılıyoruz.</p>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">♢</div>
-      <h3>Özel Davetler</h3>
-      <p>Doğum günü, yıl dönümü ve daha fazlası.</p>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">♧</div>
-      <h3>Kurumsal Etkinlikler</h3>
-      <p>Profesyonel organizasyon çözümleri.</p>
-    </div>
-
-    <div class="service">
-      <div class="service-icon">❧</div>
-      <h3>Dekorasyon</h3>
-      <p>Mekânlarınıza estetik ve zarif dokunuşlar.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="about" id="hakkimizda">
-
-  <div class="about-image"></div>
-
-  <div class="about-text">
-
-    <div class="line"></div>
-
-    <h2>
-      İzEvent ile<br>
-      Fark Yaratın
-    </h2>
-
-    <p>
-      Her organizasyon, özel bir hikayedir.
-      Biz bu hikayeyi sizinle birlikte planlıyor,
-      en ince ayrıntısına kadar düşünüyor ve
-      hayata geçiriyoruz.
-    </p>
-
-    <a href="#iletisim" class="main-btn">
-      BİZİMLE İLETİŞİME GEÇİN →
-    </a>
-
-  </div>
-
-</section>
-
-<div class="quote">
-  <p>“Güzel anlar, iyi bir planla başlar.”</p>
-</div>
-
-<section class="contact" id="iletisim">
-
-  <h2>Birlikte Planlayalım</h2>
-
-  <p class="contact-intro">
-    Organizasyonunuz için bizimle iletişime geçebilirsiniz.
-  </p>
-
-  <div class="contact-grid">
-
-    <div class="contact-item">
-      <span class="contact-icon">☎</span>
-      <a href="tel:+905444874537">
-        0544 487 45 37
-      </a>
-    </div>
-
-    <div class="contact-item">
-      <span class="contact-icon">✉</span>
-      <a href="mailto:Merve@izevent.tr">
-        Merve@izevent.tr
-      </a>
-    </div>
-
-    <div class="contact-item">
-      <span class="contact-icon">◎</span>
-      <a
-        href="https://www.instagram.com/izeventorganizasyon"
-        target="_blank"
-        rel="noopener"
-      >
-        @izeventorganizasyon
-      </a>
-    </div>
-
-  </div>
-
-</section>
-
-<footer>
-
-  <div class="footer-inner">
-
-    <div class="brand">
-      <div class="brand-main">
-        <span class="brand-iz">İZ</span>
-        <span class="brand-event">Event</span>
-      </div>
-      <div class="brand-sub">ORGANİZASYON</div>
-    </div>
-
-    <div class="footer-note">
-      Özel anlara profesyonel dokunuş...
-    </div>
-
-  </div>
-
-  <div class="copyright">
-    © 2026 İzEvent. Tüm hakları saklıdır.
-  </div>
-
-</footer>
-
-</body>
-</html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>İzEvent | Organizasyon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:"Montserrat",sans-serif;
+background:#f8f5ed;
+color:#4d5349;
+}
+
+/* HEADER */
+
+header{
+background:#f9f6ef;
+border-bottom:1px solid #dedacf;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+padding:16px 25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+color:#515949;
+text-decoration:none;
+}
+
+.logo-main{
+display:flex;
+align-items:flex-end;
+line-height:.8;
+}
+
+.iz{
+font-family:"Cormorant Garamond",serif;
+font-size:53px;
+font-weight:600;
+letter-spacing:-7px;
+position:relative;
+padding-left:15px;
+}
+
+.iz:before{
+content:"";
+position:absolute;
+width:26px;
+height:12px;
+left:-10px;
+top:19px;
+border-top:1.5px solid #65705d;
+border-radius:60%;
+transform:rotate(-32deg);
+}
+
+.iz:after{
+content:"";
+position:absolute;
+width:16px;
+height:8px;
+left:-2px;
+top:10px;
+border-top:1px solid #65705d;
+border-radius:60%;
+transform:rotate(20deg);
+}
+
+.event{
+font-family:"Cormorant Garamond",serif;
+font-size:35px;
+font-weight:400;
+margin-left:4px;
+}
+
+.logo-sub{
+font-size:8px;
+letter-spacing:5px;
+margin-top:8px;
+margin-left:15px;
+color:#6d7467;
+}
+
+nav{
+display:flex;
+gap:28px;
+font-size:12px;
+}
+
+nav a{
+text-decoration:none;
+color:#596055;
+}
+
+.quote-btn{
+background:#65705e;
+color:white;
+padding:12px 21px;
+border-radius:30px;
+text-decoration:none;
+font-size:11px;
+}
+
+/* HERO */
+
+.hero{
+min-height:650px;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(circle at 78% 25%,rgba(255,255,255,.75),transparent 25%),
+radial-gradient(circle at 90% 70%,rgba(160,168,145,.20),transparent 34%),
+linear-gradient(120deg,#faf7f0 0%,#f5f0e7 56%,#dddccf 100%);
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:430px;
+height:430px;
+border:1px solid rgba(102,112,94,.22);
+border-radius:50%;
+right:-80px;
+top:85px;
+}
+
+.hero:after{
+content:"";
+position:absolute;
+width:260px;
+height:520px;
+right:100px;
+top:40px;
+background:
+linear-gradient(70deg,transparent 47%,rgba(103,113,94,.25) 48%,rgba(103,113,94,.25) 49%,transparent 50%),
+linear-gradient(110deg,transparent 47%,rgba(103,113,94,.14) 48%,rgba(103,113,94,.14) 49%,transparent 50%);
+opacity:.6;
+transform:rotate(15deg);
+}
+
+.hero-inner{
+max-width:1200px;
+width:100%;
+margin:auto;
+padding:90px 45px;
+position:relative;
+z-index:2;
+}
+
+.line{
+width:42px;
+height:1px;
+background:#77806d;
+margin-bottom:22px;
+}
+
+.eyebrow{
+font-size:10px;
+letter-spacing:5px;
+line-height:1.8;
+color:#707768;
+margin-bottom:20px;
+}
+
+h1{
+font-family:"Cormorant Garamond",serif;
+font-size:88px;
+line-height:.9;
+font-weight:500;
+color:#485044;
+margin-bottom:28px;
+}
+
+.hero p{
+max-width:510px;
+font-size:14px;
+line-height:1.9;
+color:#5f655b;
+margin-bottom:32px;
+}
+
+.btn{
+display:inline-block;
+background:#667160;
+color:white;
+text-decoration:none;
+padding:15px 27px;
+font-size:10px;
+letter-spacing:3px;
+}
+
+/* SERVICES */
+
+.services{
+background:#fbf8f2;
+padding:90px 30px;
+}
+
+.title{
+text-align:center;
+margin-bottom:55px;
+}
+
+.title:before{
+content:"";
+display:block;
+width:38px;
+height:1px;
+background:#858b78;
+margin:0 auto 17px;
+}
+
+.title h2{
+font-family:"Cormorant Garamond",serif;
+font-size:52px;
+font-weight:500;
+color:#485044;
+}
+
+.title p{
+font-size:9px;
+letter-spacing:4px;
+margin-top:8px;
+color:#8a8e82;
+}
+
+.service-grid{
+max-width:1050px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:50px;
+}
+
+.service{
+text-align:center;
+}
+
+.service-mark{
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:16px;
+}
+
+.service-mark span{
+display:block;
+width:42px;
+height:42px;
+border:1px solid #7c8473;
+transform:rotate(45deg);
+position:relative;
+}
+
+.service:nth-child(2) .service-mark span{
+border-radius:50%;
+transform:none;
+}
+
+.service:nth-child(3) .service-mark span{
+width:48px;
+height:28px;
+border-radius:50% 50% 0 50%;
+transform:rotate(-20deg);
+}
+
+.service:nth-child(4) .service-mark span{
+width:34px;
+height:50px;
+border-radius:50% 0 50% 0;
+transform:rotate(35deg);
+}
+
+.service h3{
+font-family:"Cormorant Garamond",serif;
+font-size:24px;
+font-weight:500;
+margin-bottom:8px;
+}
+
+.service p{
+font-size:12px;
+line-height:1.7;
+color:#7b7f76;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+min-height:570px;
+}
+
+.about-visual{
+background:
+radial-gradient(circle at 25% 30%,rgba(255,255,255,.8),transparent 18%),
+radial-gradient(circle at 65% 55%,rgba(101,112,93,.18),transparent 28%),
+linear-gradient(145deg,#e5e0d4,#c8c9b9);
+position:relative;
+overflow:hidden;
+}
+
+.about-visual:before{
+content:"";
+position:absolute;
+width:320px;
+height:320px;
+border:1px solid rgba(89,101,82,.30);
+border-radius:50%;
+left:70px;
+top:90px;
+}
+
+.about-visual:after{
+content:"";
+position:absolute;
+width:220px;
+height:420px;
+left:180px;
+top:60px;
+border-left:1px solid rgba(84,96,78,.3);
+border-radius:50%;
+transform:rotate(28deg);
+}
+
+.about-text{
+padding:80px 70px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+background:#f5f1e9;
+}
+
+.about-text h2{
+font-family:"Cormorant Garamond",serif;
+font-size:55px;
+line-height:1;
+font-weight:500;
+color:#485044;
+margin-bottom:24px;
+}
+
+.about-text p{
+font-size:14px;
+line-height:1.9;
+color:#62675e;
+margin-bottom:30px;
+max-width:500px;
+}
+
+/* QUOTE */
+
+.quote{
+background:#d9ddd1;
+text-align:center;
+padding:55px 25px;
+}
+
+.quote p{
+font-family:"Cormorant Garamond",serif;
+font-size:40px;
+font-style:italic;
+color:#545c50;
+}
+
+/* CONTACT */
+
+.contact{
+padding:85px 25px;
+background:#faf7f0;
+text-align:center;
+}
+
+.contact h2{
+font-family:"Cormorant Garamond",serif;
+font-size:52px;
+font-weight:500;
+color:#485044;
+}
+
+.contact-intro{
+font-size:13px;
+margin:10px 0 40px;
+color:#74796f;
+}
+
+.contact-grid{
+max-width:850px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.contact-item{
+border-top:1px solid #b5b9ab;
+border-bottom:1px solid #b5b9ab;
+padding:25px 10px;
+}
+
+.contact-label{
+font-family:"Cormorant Garamond",serif;
+font-size:20px;
+margin-bottom:8px;
+color:#596154;
+}
+
+.contact-item a{
+font-size
