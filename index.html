@@ -1,321 +1,333 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İzEvent | Organizasyon & Etkinlik</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>İzEvent | Organizasyon & Etkinlik</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f6f1;
-      color: #343a36;
-      line-height: 1.6;
-    }
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f6f1;
+    color: #343a36;
+    line-height: 1.6;
+}
+
+/* ÜST ALAN */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #ece8df;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #748675;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4c554f;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+/* ANA ALAN */
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #667868;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #626963;
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: #748675;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* HAKKIMIZDA */
+
+.about {
+    background: white;
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 29px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #667868;
+    margin-bottom: 25px;
+}
+
+.about p {
+    max-width: 720px;
+    margin: auto;
+    color: #606760;
+    font-size: 17px;
+}
+
+/* HİZMETLER */
+
+.services {
+    padding: 90px 7%;
+    text-align: center;
+}
+
+.service-container {
+    max-width: 1050px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service {
+    background: #ffffff;
+    padding: 45px 25px;
+    border: 1px solid #ebe7de;
+    border-radius: 6px;
+}
+
+.service h3 {
+    color: #667868;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.service p {
+    color: #6b716c;
+    font-size: 14px;
+}
+
+/* İLETİŞİM */
+
+.contact {
+    background: #748675;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.contact p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.contact-button {
+    display: inline-block;
+    background: white;
+    color: #667868;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* ALT */
+
+footer {
+    background: #ffffff;
+    padding: 28px 20px;
+    text-align: center;
+    color: #858b86;
+    font-size: 13px;
+}
+
+/* TELEFON */
+
+@media (max-width: 750px) {
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #ece8df;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+        justify-content: center;
     }
 
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    nav {
+        display: none;
     }
 
     .logo {
-      font-size: 30px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: #788b79;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #434a45;
-      font-size: 15px;
+        font-size: 27px;
     }
 
     .hero {
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px;
-      background: #f8f6f1;
-    }
-
-    .hero-content {
-      max-width: 760px;
+        min-height: 65vh;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 8vw, 78px);
-      font-weight: 500;
-      color: #788b79;
-      letter-spacing: 3px;
-      margin-bottom: 22px;
+        letter-spacing: 3px;
     }
 
     .hero p {
-      font-size: 19px;
-      color: #646b65;
-      max-width: 620px;
-      margin: 0 auto 34px;
+        font-size: 17px;
     }
 
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      background: #788b79;
-      color: white;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-size: 15px;
-      transition: 0.25s;
-    }
-
-    .btn:hover {
-      opacity: 0.88;
-    }
-
-    section {
-      padding: 90px 24px;
-    }
-
-    .section-inner {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 500;
-      color: #556357;
-      margin-bottom: 18px;
-    }
-
-    .section-text {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 50px;
-      color: #727872;
-    }
-
-    .services {
-      background: #ffffff;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .card {
-      background: #f8f6f1;
-      padding: 34px 28px;
-      border-radius: 18px;
-      text-align: center;
-      border: 1px solid #ece8df;
-    }
-
-    .card h3 {
-      color: #657466;
-      font-size: 20px;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .card p {
-      color: #747a75;
-      font-size: 15px;
-    }
-
-    .about {
-      background: #f3f0e9;
-      text-align: center;
-    }
-
-    .contact {
-      background: #ffffff;
-      text-align: center;
-    }
-
-    .contact-box {
-      max-width: 680px;
-      margin: auto;
-      background: #f8f6f1;
-      padding: 44px 28px;
-      border-radius: 20px;
-    }
-
-    .contact-box p {
-      color: #666d67;
-      margin-bottom: 12px;
-    }
-
-    .contact-box a {
-      color: #6e806f;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer {
-      background: #788b79;
-      color: #ffffff;
-      text-align: center;
-      padding: 24px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 800px) {
-      .nav {
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      .nav-links {
-        gap: 16px;
-        font-size: 14px;
-      }
-
-      .cards {
+    .service-container {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 68vh;
-      }
     }
-  </style>
+
+    .about,
+    .services {
+        padding: 70px 25px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="nav">
-      <div class="logo">İzEvent</div>
+<header>
+    <div class="logo">İzEvent</div>
 
-      <div class="nav-links">
+    <nav>
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#hizmetler">Hizmetler</a>
         <a href="#iletisim">İletişim</a>
-      </div>
-    </div>
-  </header>
+    </nav>
+</header>
 
-  <main>
 
-    <section class="hero">
-      <div class="hero-content">
+<section class="hero">
+
+    <div class="hero-content">
+
         <h1>İzEvent</h1>
 
         <p>
-          Özel anlarınızı sade, şık ve unutulmaz organizasyonlara dönüştürüyoruz.
+            Özel anlarınızı zarif dokunuşlarla unutulmaz
+            organizasyonlara dönüştürüyoruz.
         </p>
 
-        <a class="btn" href="#iletisim">Bizimle İletişime Geç</a>
-      </div>
-    </section>
+        <a href="#iletisim" class="button">
+            BİZE ULAŞIN
+        </a>
 
-    <section class="services" id="hizmetler">
-      <div class="section-inner">
+    </div>
 
-        <h2 class="section-title">Hizmetlerimiz</h2>
+</section>
 
-        <p class="section-text">
-          Etkinliğinizin her detayında profesyonel destek sunuyoruz.
-        </p>
 
-        <div class="cards">
+<section class="about" id="hakkimizda">
 
-          <div class="card">
+    <h2 class="section-title">Hakkımızda</h2>
+
+    <p>
+        İzEvent; davet, etkinlik ve özel organizasyonlarınızın
+        planlama sürecinden uygulama aşamasına kadar yanınızda olur.
+        Her organizasyonu kendi hikâyesine uygun, sade ve özenli
+        detaylarla tasarlıyoruz.
+    </p>
+
+</section>
+
+
+<section class="services" id="hizmetler">
+
+    <h2 class="section-title">Hizmetlerimiz</h2>
+
+    <div class="service-container">
+
+        <div class="service">
             <h3>Organizasyon</h3>
             <p>
-              Davet, kutlama ve özel etkinliklerin planlama ve koordinasyon süreçlerini yönetiyoruz.
+                Özel davet ve etkinliklerin planlanması,
+                koordinasyonu ve uygulaması.
             </p>
-          </div>
+        </div>
 
-          <div class="card">
+        <div class="service">
             <h3>Etkinlik Ekibi</h3>
             <p>
-              Karşılama hostesi, banquet garson ve operasyon destek ekipleri sağlıyoruz.
+                Karşılama hostesi, banquet garson ve
+                organizasyon destek personeli.
             </p>
-          </div>
+        </div>
 
-          <div class="card">
-            <h3>Dekorasyon Desteği</h3>
+        <div class="service">
+            <h3>Kurulum & Dekorasyon</h3>
             <p>
-              Etkinlik alanınızın düzenleme, kurulum ve dekorasyon süreçlerine destek oluyoruz.
+                Etkinlik alanlarının kurulumu, toplanması
+                ve dekorasyon süreçlerine profesyonel destek.
             </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="hakkimizda">
-      <div class="section-inner">
-
-        <h2 class="section-title">Hakkımızda</h2>
-
-        <p class="section-text">
-          İzEvent olarak özel günlerinizi planlarken zarafet, düzen ve profesyonelliği bir araya getiriyoruz.
-          Amacımız her etkinliğin kendine özgü bir iz bırakmasını sağlamak.
-        </p>
-
-      </div>
-    </section>
-
-    <section class="contact" id="iletisim">
-      <div class="section-inner">
-
-        <h2 class="section-title">İletişim</h2>
-
-        <div class="contact-box">
-          <p><strong>Merve Sütcü</strong></p>
-          <p>
-            Telefon:
-            <a href="tel:+905444874537">0544 487 45 37</a>
-          </p>
-          <p>
-            Organizasyon ve etkinlik talepleriniz için bizimle iletişime geçebilirsiniz.
-          </p>
         </div>
 
-      </div>
-    </section>
+    </div>
 
-  </main>
+</section>
 
-  <footer>
-    © 2026 İzEvent
-  </footer>
+
+<section class="contact" id="iletisim">
+
+    <h2>Bizimle İletişime Geçin</h2>
+
+    <p>
+        Organizasyonunuz için detayları birlikte planlayalım.
+    </p>
+
+    <a href="tel:+905444874537" class="contact-button">
+        0544 487 45 37
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 İzEvent • Organizasyon & Etkinlik
+</footer>
 
 </body>
 </html>
