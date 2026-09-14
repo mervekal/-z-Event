@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İzEvent | Organizasyon & Etkinlik</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f6f1;
+      color: #343a36;
+    }
+
+    header {
+      padding: 28px 20px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .brand {
+      font-size: 34px;
+      letter-spacing: 3px;
+      color: #748675;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 25px;
+      background: #e8ede6;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 18px;
+      color: #536457;
+    }
+
+    .hero p {
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 30px;
+      color: #536457;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .card h3 {
+      color: #6d806f;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #667a69;
+      color: white;
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 12px;
+      font-size: 29px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 15px 28px;
+      background: white;
+      color: #536457;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      font-size: 14px;
+      background: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">İzEvent</div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Her Anınıza İz Bırakır</h1>
+    <p>
+      Özel günlerinizi unutulmaz anılara dönüştürüyoruz.
+      Etkinlik ve organizasyon süreçlerinizde profesyonel ekibimizle yanınızdayız.
+    </p>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Hizmetlerimiz</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Organizasyon</h3>
+      <p>Özel gün ve etkinlik organizasyonları.</p>
+    </div>
+
+    <div class="card">
+      <h3>Karşılama & LCV</h3>
+      <p>Misafir karşılama ve davetli koordinasyonu.</p>
+    </div>
+
+    <div class="card">
+      <h3>Etkinlik Ekibi</h3>
+      <p>Hostes, banquet ve operasyon desteği.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dekorasyon</h3>
+      <p>Konsept ve dekorasyon uygulama desteği.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>İletişim</h2>
+  <p>Etkinliğinizi birlikte planlayalım.</p>
+
+  <a href="tel:+905444874537">
+    Bize Ulaşın
+  </a>
+</section>
+
+<footer>
+  © 2026 İzEvent • Tüm hakları saklıdır.
+</footer>
+
+</body>
+</html>
